@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-x8ml7*cpjivec)a4mdm)pyv0zd93i7_4pkct)do@t5&!&3nn!n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'ecommerceproject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -88,7 +88,15 @@ DATABASES = {
         'PORT': '3306'
     }
 }
+'''
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+        
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
